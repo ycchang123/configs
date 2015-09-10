@@ -1,0 +1,360 @@
+PATH=/bin:/usr/bin:/usr/local/bin
+MAILDIR=$HOME/Mail
+#DEFAULT=/var/mail/liuyh
+LOGFILE=$MAILDIR/procmail.log
+#LOGFILE=/dev/null
+SPAM=$MAILDIR/spam
+SPAM2=$MAILDIR/spam2
+CACTI=$MAILDIR/cacti
+PIWIK=$MAILDIR/piwik
+Jobs=$MAILDIR/jobs
+FAREWELL=$MAILDIR/farewell
+OTHERS=$MAILDIR/others
+BLACKHOLE=/dev/null
+GMAIL=ycc123@gmail.com
+
+:0
+* ^From: "Meeting Room System"
+$OTHERS
+
+:0
+* ^Subject: Undelivered Mail Returned to Sender
+undeliver
+
+:0 
+* ^Subject: Cron
+$OTHERS
+
+#:0 H
+#* ^From: Cron Daemon
+#$OTHERS
+
+:0 
+* ^From: Cron Daemon
+$OTHERS
+
+:0
+* ^From: .*docum@cc.nctu.edu.tw
+docum
+
+:0
+* ^Subject: .*\[Jobs\]
+$Jobs
+
+:0
+* ^To: .*root@
+root
+
+:0 H
+* ^From: .*<pa@cs.nctu.edu.tw>
+* ^Subject: PA\.CS - Daily Palo Alto Networks Reports
+! $GMAIL
+
+:0 H
+* ^Subject: Postfix SMTP server:
+$FAREWELL
+
+:0 H
+* ^Subject: \*\*\* PA Alert: total session count exceeds 20w \*\*\*$
+$BLACKHOLE
+
+#:0 H
+#* To: wwwta@cs.nctu.edu.tw
+#$BLACKHOLE
+
+:0 H
+* SPAMSPAM
+$BLACKHOLE
+
+#:0 H
+#* ^Subject: Cron <csdoor@csduty> /home/csdoor/csdoor/refresh_card\.pl > /dev/null
+#$BLACKHOLE
+
+:0 H
+* ^Subject: Wrong format PR:
+$BLACKHOLE
+
+:0 H
+* ^Reply-To: .*@yahoogroups\.com$
+$BLACKHOLE
+
+:0 H
+* ^Reply-To: .*@googlegroups\.com$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?s82lp7S1rsim5qrALaX\+sOqzzKRqrsi5Q7r0r7g=\?=
+$BLACKHOLE
+
+:0 H
+* ^From: "Jimmy" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "Jenny" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "Abby" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "Yusun" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "Andy" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "CliraCindy" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: "Vivian" <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pGqkSLx2rbU=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?Q2l0eVBsYXmmbrFkwXC3\+Q==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?saGkSKRqvHA=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?t23ByKRIpcG59A==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?qPO3fLNztbizQg==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?saGkSK\+7tbe5zg==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?t1KkV7dzwkE=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pua\+UKzjqHM=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pVu3\+a5puuu/7w==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pua\+ULdzsFQ=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?UVFCdXm5c625s6E=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?vUeorbFNrmE=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?UVFCdXmvfb1MsU2wzw==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?rvy6uA==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?rlS81sBXuUQ=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?uvS49Lxzp2mkpKTf\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pVu3+a5puuu/7w==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?pqikSLr0\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?t1KmYrCqtq8=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?tlW02qr3tVDFVbDd\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?Tm8xpm6xZKT9\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?UVFCdXmmbqqrscDCyw==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?5pm05LuqIOijtA==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?qcmntiCzXA==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?5oCh5a2cIOiosQ==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?WWFob28hIKlfvK\+p573m\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?WWFob28hIOWlh\+aRqeaLjeizow==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?WWFob28hqV\+8r6nnveY=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?WWFob28h5aWH5pGp5ouN6LOj\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?WWFob2\+pX7yvqee95g==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?WWFob2/vvIHlpYfmkanmi43os6M=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?WWFob2\+hSalfvK\+p573m\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?TFYsR1VDQ0mzZqjspUm02qFJ\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?TFYsR1VDQ0nosqjliLDku5jmrL7vvIE=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?44CO5pyD5ZOh6YCa55\+l44CP\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?44CO5Y\+w5YyX5rWB6KGM44CP\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?44CO5Y\+wLeWMly3mtYEt6KGMLeW/qy3loLHjgI8=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?44CO5Y\+wK\+WMlyvlhKor5oOgK\+W/qyvloLHjgI8=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?.*44CO5Y\+wLeWMly3lhKot5oOgLeW/qy3loLHjgI.*=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?.*7lj7At5YyXLeWEqi3mg6At5b\+rLeWgsTz.*=\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?TFZHVUNDSaV4pV/AdbRmp9az\+A==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?oWlMVkdVQ0NJpXilX8B1tGan1rP4oW.*\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?TFZHVUNDSaZXtVCl/rP1pEWn6Q==\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?TFZHVUNDScB1tGan1rP4\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?big5\?B\?rXHByrr0.*?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: =\?utf-8\?B\?6KiC6LO857ay.*\?= <.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^From: .*=\?utf-8\?Q\?=E5=AD=B8=E7=BF=92=E4=B9=8B=E6=98=9F.*\?=.* <.*@aim\.com>$
+$BLACKHOLE
+
+:0 H
+* ^From: .*@aim\.com (.*=\?utf-8\?Q\?=E5=AD=B8=E7=BF=92=E4=B9=8B=E6=98=9F.*\?=.*)$
+$BLACKHOLE
+
+:0 H
+* ^From: .*=\?utf-8\?Q\?=E6=8A=80=E8=83=BD=E7=B6=B2=E4=B8=8A=E7=B3=BB=E7=B5=B1.*\?=.* <.*@aim\.com>$
+$BLACKHOLE
+
+:0 H
+* ^From: .*=\?[gG][bB]2312\?B\?1tC5\+tDQ0rXQxc\+i\?= <.*@www\.cnlinfo\.net>$
+$BLACKHOLE
+
+:0 H
+* ^From: .*=\?gb2312\?.*<.*@yahoo\.com(\.tw)?>$
+$BLACKHOLE
+
+:0 H
+* ^Subject: mailpost failure (.*)$
+$BLACKHOLE
+
+
+:0 H
+* ^From.*nctu_cacti@nctu\.edu\.tw
+$CACTI
+
+:0 H
+* ^From: .*Piwik 
+$PIWIK
+
+:0 H
+* ^From.*nctu\.edu\.tw
+$DEFAULT
+
+:0 H
+* ^From.*gmail\.com
+$DEFAULT
+
+#:0 H
+#* X-Spam-Flag
+#$SPAM
+
+:0 H
+* ^From.*yahoo\.co\.jp
+$SPAM
+
+:0 H
+* [gG][bB]2312
+$SPAM
+
+:0 H
+* [iI][sS][oO]-2022-[jJ][pP]
+$SPAM
+
+:0 H
+* ^Subject: \[SPAM\].*$
+$SPAM
